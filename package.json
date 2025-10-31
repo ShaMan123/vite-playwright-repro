@@ -5,9 +5,9 @@
   "description": "",
   "scripts": {
     "postinstall": "bash ./cert/createSelfSignedCert.sh",
-    "dev": "vite --port 3000",
+    "dev": "vite --port 3001",
     "build": "vite build",
-    "preview": "vite preview --port 3000",
+    "preview": "vite preview --port 3001",
     "serve": "serve ./build -s --ssl-cert ./cert/cert.pem --ssl-key ./cert/key.pem",
     "test": "playwright test"
   },

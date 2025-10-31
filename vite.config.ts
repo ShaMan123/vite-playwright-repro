@@ -13,7 +13,7 @@ export default defineConfig({
 
   // Development server configuration
   server: {
-    port: Number(process.env.PORT || 3000),
+    port: Number(process.env.PORT || 3001),
     host: true,
     open: true,
     https: {

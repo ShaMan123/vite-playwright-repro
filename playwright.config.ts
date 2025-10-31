@@ -7,7 +7,7 @@ process.env.NODE_EXTRA_CA_CERTS = path.resolve("./cert/cert.pem");
 
 // env
 const CI = process.env.CI === "true";
-const port = Number(process.env.PORT || 3000);
+const port = Number(process.env.PORT || 3001);
 const localhost = new URL(`https://localhost:${port}`);
 const baseURL = new URL(process.env.BASE_URL || localhost.toString());
 
