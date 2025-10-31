@@ -16,7 +16,7 @@ const cert = {
 };
 
 // Trust TSL cert
-process.env.NODE_EXTRA_CA_CERTS = cert.certPath;
+// process.env.NODE_EXTRA_CA_CERTS = cert.certPath;
 
 /**
  * See https://playwright.dev/docs/test-configuration.
