@@ -1,0 +1,30 @@
+{
+  "name": "vite-playwright-repro",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "scripts": {
+    "postinstall": "bash ./cert/createSelfSignedCert.sh",
+    "dev": "vite --port 3000",
+    "build": "vite build",
+    "preview": "vite preview --port 3000",
+    "serve": "serve ./build -s --ssl-cert ./cert/cert.pem --ssl-key ./cert/key.pem",
+    "test": "playwright test"
+  },
+  "author": "ShaMan123",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.9.2",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.1.0",
+    "serve": "^14.2.5",
+    "vite": "^7.1.12"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-error-boundary": "^6.0.0"
+  }
+}
