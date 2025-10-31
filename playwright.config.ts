@@ -1,8 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
 import path from "path";
 
-// Trust TSL cert
-process.env.NODE_EXTRA_CA_CERTS = path.resolve("./cert/cert.pem");
 // process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 // env
@@ -11,10 +9,24 @@ const port = Number(process.env.PORT || 3001);
 const localhost = new URL(`https://localhost:${port}`);
 const baseURL = new URL(process.env.BASE_URL || localhost.toString());
 
+const cert = {
+  origin: localhost.origin,
+  certPath: path.resolve("./cert/cert.pem"),
+  keyPath: path.resolve("./cert/key.pem"),
+};
+
+// Trust TSL cert
+process.env.NODE_EXTRA_CA_CERTS = cert.certPath;
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  metadata: {
+    cert,
+    baseURL: baseURL.toString(),
+  },
+  globalSetup: "./test/setup.ts",
   timeout: 10 * 1000,
   fullyParallel: true,
   forbidOnly: CI,

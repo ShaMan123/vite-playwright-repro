@@ -6,5 +6,8 @@ import { expect, test } from "@playwright/test";
 test("Example", async ({ page }, testInfo) => {
   await page.goto("/");
   await expect(page).toHaveTitle("Hello World");
+  expect(
+    await (await page.waitForFunction(() => window.foo as string)).jsonValue()
+  ).toBe("bar");
   await expect(page.getByText("Hello World")).toBeVisible();
 });

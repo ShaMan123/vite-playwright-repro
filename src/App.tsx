@@ -1,6 +1,8 @@
 import { ReactElement, StrictMode } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
+window.foo = "bar";
+
 export default function App(): ReactElement {
   return (
     /**
