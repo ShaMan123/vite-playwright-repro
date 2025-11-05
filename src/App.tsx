@@ -1,5 +1,6 @@
 import { ReactElement, StrictMode } from "react";
 import { ErrorBoundary } from "react-error-boundary";
+import Gif from "./moana.gif";
 
 window.foo = "bar";
 
@@ -13,6 +14,7 @@ export default function App(): ReactElement {
     <StrictMode>
       <ErrorBoundary fallback={<h3>An error has occurred</h3>}>
         <h3>Hello World</h3>
+        <img src={Gif} />
       </ErrorBoundary>
     </StrictMode>
   );
